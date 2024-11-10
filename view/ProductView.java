@@ -15,6 +15,7 @@ public class ProductView extends JFrame {
     private JTextField productIdField, productNameField, quantityField, importPriceField, sellPriceField, totalCostField, discountField;
     private JButton actionButtonAdd;
     private JButton actionButtonSave;
+    private JButton actionButtonDelete;
     private String mode;
 
 
@@ -34,7 +35,7 @@ public class ProductView extends JFrame {
         setLayout(new BorderLayout());
         actionButtonAdd = new JButton();
         actionButtonSave = new JButton();
-
+        actionButtonDelete = new JButton();
         // Add actionButton at the bottom
         add(actionButtonAdd, BorderLayout.SOUTH);
 
@@ -122,6 +123,7 @@ public class ProductView extends JFrame {
             case "QUERY":
                 actionButtonAdd.setText("Query Product");
                 actionButtonSave.setText("Save Modification");
+                actionButtonDelete.setText("Delete Product");
                 productIdField.setEditable(true);
                 productNameField.setEditable(true);
                 quantityField.setEditable(true);
@@ -170,9 +172,10 @@ public class ProductView extends JFrame {
             add(actionButtonAdd, BorderLayout.SOUTH);
         }
         else {
-            JPanel buttonPanel = new JPanel(new GridLayout(1, 2, 5, 5));
+            JPanel buttonPanel = new JPanel(new GridLayout(1, 3, 5, 5));
             buttonPanel.add(actionButtonAdd);
             buttonPanel.add(actionButtonSave);
+            buttonPanel.add(actionButtonDelete);
             add(buttonPanel, BorderLayout.SOUTH);
         }
 
@@ -241,7 +244,9 @@ public class ProductView extends JFrame {
     public float getTotalCost(){
         return Float.parseFloat(this.totalCostField.getText());
     }
-
+    public JButton getActionButtonDelete(){
+        return this.actionButtonDelete;
+    }
 
     // Setup listener
     public void setActionListener(ActionListener listener){
@@ -249,11 +254,19 @@ public class ProductView extends JFrame {
         this.actionButtonSave.addActionListener(listener);
         this.productIdField.addActionListener(listener);
         this.quantityField.addActionListener(listener);
+        if (this.discountField != null){
+            this.discountField.addActionListener(listener);
+        }
+        this.actionButtonDelete.addActionListener(listener);
     }
 
     // Function to access the button
     public JButton getActionButtonAdd(){
         return this.actionButtonAdd;
+    }
+
+    public JTextField getDiscountField() {
+        return this.discountField;
     }
 
     public JButton getActionButtonSave(){
@@ -267,27 +280,4 @@ public class ProductView extends JFrame {
     public JTextField getQuantityField() {
         return this.quantityField;
     }
-    /*
-    public void setActionButtonListener(ActionListener actionListener) {
-        actionButton.addActionListener(actionListener);
-    }
-
-    public void setProductIdFieldActionListener(ActionListener actionListener) {
-        productIdField.addActionListener(actionListener);
-    }
-
-    public void setQuantityFieldActionListener(ActionListener actionListener) {
-        quantityField.addActionListener(actionListener);
-    }
-
-    public void setImportPriceFieldActionListener(ActionListener actionListener) {
-        quantityField.addActionListener(actionListener);
-    }
-
-    public void setSellPriceFieldActionListener(ActionListener actionListener) {
-        sellPriceField.addActionListener(actionListener);
-    }
-    */
-
-
 }

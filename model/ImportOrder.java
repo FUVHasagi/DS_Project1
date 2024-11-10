@@ -7,19 +7,22 @@ public class ImportOrder {
     private int orderId;
     private int vendorID;
     private String OrderDate;
-    private float TotalCost;
+    private double TotalCost;
     private List<ImportOrderLine> lines =  new ArrayList<ImportOrderLine>();
 
-    public void setOrderId(int orderId) {this.orderId = orderId;}
+    public void setImportOrderId(int orderId) {this.orderId = orderId;}
     public int getOrderId() {return orderId;}
 
     public void setCustomerId(int vendorId) {this.vendorID = vendorId;}
     public int getCustomerId() {return vendorID;}
 
 
-    public void setOrderDate(String OrderDate) {this.OrderDate = OrderDate;}
-    public String getOrderDate() {return OrderDate;}
+    public void setDate(String OrderDate) {this.OrderDate = OrderDate;}
+    public String getDate() {return OrderDate;}
 
-    public void setTotalCost(float TotalCost) {this.TotalCost = TotalCost;}
-    public float getTotalCost() {return TotalCost;}
+    public void setTotalCost(double TotalCost) {this.TotalCost = TotalCost;}
+    public double getTotalCost() {return TotalCost;}
+
+    public void setLines(List<ImportOrderLine> lines) {this.lines = lines;}
+    public List<ImportOrderLine> getLines() {return lines;}
 }

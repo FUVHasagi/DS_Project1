@@ -9,6 +9,7 @@ public class SellView extends JFrame {
 
     private JButton btnAdd = new JButton("Add a new item");
     private JButton btnPay = new JButton("Finish and Pay");
+    private JButton btnCustomer = new JButton("Add Customer");
 
     private DefaultTableModel items = new DefaultTableModel(); // store information for the table!
 
@@ -42,6 +43,7 @@ public class SellView extends JFrame {
         panelButton.setPreferredSize(new Dimension(400, 100));
         panelButton.add(btnAdd);
         panelButton.add(btnPay);
+        panelButton.add(btnCustomer);
         this.getContentPane().add(panelButton);
 
     }
@@ -53,6 +55,8 @@ public class SellView extends JFrame {
     public JButton getBtnPay() {
         return btnPay;
     }
+
+    public JButton getBtnCustomer() {return btnCustomer;}
 
     public JLabel getLabTotal() {
         return labTotal;

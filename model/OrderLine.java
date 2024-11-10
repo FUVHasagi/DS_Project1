@@ -19,8 +19,7 @@ public class OrderLine {
     }
 
     public double getCost() {
-        this.cost = this.quantity * this.price * this.discount;
-        return cost;
+        return this.cost;
     }
 
     public void setCost(double cost) {

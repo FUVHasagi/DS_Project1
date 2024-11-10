@@ -56,6 +56,4 @@ public class ImportOrderLine {
     public void setProductID(int productID) {
         this.productID = productID;
     }
-
-
 }

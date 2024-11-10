@@ -5,6 +5,15 @@ public class Customer {
     private String Name;
     private String Phone;
     private String Address;
+
+    public Customer(int customerID, String customerName, String phoneNumber, String address) {
+        CustomerID = customerID;
+        Name = customerName;
+        Phone = phoneNumber;
+        Address = address;
+    }
+
+    public Customer() {}
     // private int Score;
     // private String Rank;
 

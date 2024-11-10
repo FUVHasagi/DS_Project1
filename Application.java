@@ -32,8 +32,7 @@ public class Application {
     private MainController mainScreen;
 
     private Application() throws SQLException {
-        try {
-            // Establish connection with MySQL database
+        try {            // Establish connection with MySQL database
             this.connection = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/project1", "myuser", "mypassword"
             );

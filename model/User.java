@@ -4,10 +4,26 @@ public class User {
     private String username;
     private String role;
     private String DisplayName;
+    private String password;
 
     public User(String username, String role) {
         this.username = username;
         this.role = role;
+    }
+
+    public User(String username, String role, String DisplayName, String password) {
+        this.username = username;
+        this.role = role;
+        this.DisplayName = DisplayName;
+        this.password = password;
+    }
+
+    public String getPassword(){
+        return password;
+    }
+
+    public void setPassword(String password){
+        this.password = password;
     }
 
     public User(String DisplayName) {
